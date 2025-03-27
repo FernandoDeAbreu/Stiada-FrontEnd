@@ -1,0 +1,48 @@
+.header{
+  font-size: 24px;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+}
+.example-card {
+  border-radius: 10px;
+  background-color: #ECECEC;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+}
+.example-header-image {
+  background-image: url('https://i.pinimg.com/474x/73/14/cc/7314cc1a88bf3cdc48347ab186e12e81.jpg');
+  background-size: cover;
+}
+.grid {
+  position: relative;
+
+  .btn {
+    font-size: 30px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+}

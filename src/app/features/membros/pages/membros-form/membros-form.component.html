@@ -1,0 +1,28 @@
+<div class="header">
+  <span>Novo membro</span>
+</div>
+
+<form class="example-form" [formGroup]="form" (ngSubmit)="onSubmit()" autocomplete="off">
+  <mat-form-field class="example-full-width">
+    <mat-label>Nome</mat-label>
+    <input matInput placeholder="Nome" formControlName="nome" required>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Celular</mat-label>
+    <input type="tel" matInput placeholder="(99) 9 9999-9999" formControlName="telefone" required>
+    <mat-icon matSuffix>mode_edit</mat-icon>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>WhatsApp</mat-label>
+    <input type="tel" matInput placeholder="(99) 9 9999-9999" formControlName="whatsApp" required>
+    <mat-icon matSuffix>mode_edit</mat-icon>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="Email" formControlName="email">
+  </mat-form-field>
+  <div class="form-buttons">
+    <button mat-raised-button color="primary" type="submit">Salvar</button>
+    <button mat-raised-button color="warn" type="button" (click)="form.reset()">Limpar</button>
+  </div>
+</form>
