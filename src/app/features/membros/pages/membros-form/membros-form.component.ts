@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, FormGroupDirective, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {FormsModule} from '@angular/forms';
@@ -25,15 +25,29 @@ import {MatFormFieldModule} from '@angular/material/form-field';
   styleUrl: './membros-form.component.scss'
 })
 export class MembrosFormComponent {
-  @Input() form!: FormGroup;
+  @Input() formGroup!: FormGroup;
   @Input() submitText = 'Salvar';
+  @Output() formSubmit = new EventEmitter<void>();
   error?: string;
 
+  constructor(private router: Router) {}
   ngOnInit() {
-    if(!this.form){
+    if(!this.formGroup){
       throw new Error('O formulário é obrigatório');
     }
   }
 
-  onSubmit() {}
+  onSubmit() {
+    this.save();
+  }
+
+  save(): void {
+    if (this.formGroup.valid) {
+      this.formSubmit.emit();
+    }
+  }
+
+  cancel(): void{
+    this.router.navigate(['membros']);
+  }
 }

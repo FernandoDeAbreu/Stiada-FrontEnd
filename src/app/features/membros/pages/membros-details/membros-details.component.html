@@ -1,0 +1,35 @@
+<form class="example-form" [formGroup]="createForm"  autocomplete="off">
+  <div class="avatar">
+    <span id="avatar-text">{{firstLetter}}</span>
+  </div>
+  <div class="membro-details">
+    <h1 class="apelido">{{firstName}}</h1>
+    <h3 class="name">{{membro.nome}}</h3>
+  </div>
+ <section>
+  <div class="example-button-row">
+    <div class="example-flex-container">
+      <button mat-stroked-button color="primary" (click)="abrirCriacao(membro, 'Dízimo')">Dízimos</button>
+      <button mat-stroked-button color="primary" (click)="abrirCriacao(membro, 'Missão')">Missões</button>
+      <button mat-stroked-button color="primary" (click)="abrirCriacao(membro, 'Oferta')">Ofertas</button>
+    </div>
+  </div>
+</section>
+  <mat-form-field class="example-full-width">
+    <mat-label>Celular</mat-label>
+    <input matInput readonly="true" formControlName="telefone" >
+    <mat-icon matSuffix>mode_edit</mat-icon>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>WhatsApp</mat-label>
+    <input matInput readonly="true" formControlName="whatsApp">
+    <mat-icon matSuffix>mode_edit</mat-icon>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Email</mat-label>
+    <input matInput readonly="true" formControlName="email">
+  </mat-form-field>
+  <div>
+    <button class="btnEditar" mat-flat-button color="primary" (click)="editMembro(membro)">Editar</button>
+  </div>
+</form>

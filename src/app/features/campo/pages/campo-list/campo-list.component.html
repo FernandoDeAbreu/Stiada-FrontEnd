@@ -1,0 +1,19 @@
+<div class="header">
+  <span>campos</span>
+</div>
+<div class="loading" *ngIf="loading">Carregando...</div>
+<div class="grid">
+  <div class="card" *ngFor="let campo of campos">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{campo.nome}}</mat-card-title>
+          <mat-card-subtitle>{{campo.sigla}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-icon class="edit-icon" (click)="editCampo(campo)">edit</mat-icon>
+      </mat-card>
+  </div>
+  <a routerLink="/campos/novo" class="btn">+</a>
+</div>
+
+

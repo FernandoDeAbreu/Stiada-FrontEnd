@@ -2,7 +2,7 @@
   <span>Novo membro</span>
 </div>
 
-<form class="example-form" [formGroup]="form" (ngSubmit)="onSubmit()" autocomplete="off">
+<form class="example-form" [formGroup]="formGroup" (ngSubmit)="onSubmit()" autocomplete="off">
   <mat-form-field class="example-full-width">
     <mat-label>Nome</mat-label>
     <input matInput placeholder="Nome" formControlName="nome" required>
@@ -22,7 +22,7 @@
     <input matInput placeholder="Email" formControlName="email">
   </mat-form-field>
   <div class="form-buttons">
+    <button mat-raised-button color="warn" type="button" (click)="cancel()">Limpar</button>
     <button mat-raised-button color="primary" type="submit">Salvar</button>
-    <button mat-raised-button color="warn" type="button" (click)="form.reset()">Limpar</button>
   </div>
 </form>

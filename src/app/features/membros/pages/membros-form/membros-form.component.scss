@@ -32,8 +32,13 @@
 .example-full-width {
   width: 100%;
 }
+
 .form-buttons{
   gap: 10px;
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
+}
+button {
+  padding: 10px;
+  width: 50%;
 }
