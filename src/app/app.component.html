@@ -1,1 +1,16 @@
-<router-outlet></router-outlet>
+<header class="header">
+  <button type="button" mat-button (click)="drawer.toggle()">
+      <i class="material-icons">menu</i>
+  </button>
+  <section class="title-section">
+      <strong class="sigla">STIADA</strong>
+      <strong class="descricao">- Secretaria IEADA</strong>
+  </section>
+</header>
+
+<mat-drawer-container class="example-container">
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+      <p>Itens do menu</p>
+  </mat-drawer>
+  <router-outlet></router-outlet>
+</mat-drawer-container>
